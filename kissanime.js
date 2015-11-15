@@ -1,14 +1,43 @@
 var URL = window.location.origin
+var hostName = window.location.hostname;
 
 // determine if user is on KissAnime and on the anime's main episode page
-if (window.location.href.indexOf("kissanime.com/") == -1) {
-	alert("You are not currently on KissAnime.");
-	//fake function to cause script to terminate
-	AbortJavaScript();
-} else if (window.location.href.indexOf("kissanime.com/Anime/") == -1) {
-	alert("You are not on the Anime's main episode page.");
-	//fake function to cause script to terminate
-	AbortJavaScript();
+if (hostName == "kissanime.com"){
+	if (window.location.href.indexOf("kissanime.com/") == -1) {
+		alert("You are not currently on KissAnime.");
+		//fake function to cause script to terminate
+		AbortJavaScript();
+	} else if (window.location.href.indexOf("kissanime.com/Anime/") == -1) {
+		alert("You are not on the Anime's main episode page.");
+		//fake function to cause script to terminate
+		AbortJavaScript();
+	}
+	
+}
+// determine if user is on KissCartoon and on the cartoon's main episode page
+else if (hostName == "kisscartoon.me"){
+	if (window.location.href.indexOf("kisscartoon.me/") == -1) {
+		alert("You are not currently on KissCartoon.");
+		//fake function to cause script to terminate
+		AbortJavaScript();
+	} else if (window.location.href.indexOf("kisscartoon.me/Cartoon/") == -1) {
+		alert("You are not on the Cartoon's main episode page.");
+		//fake function to cause script to terminate
+		AbortJavaScript();
+	}
+}
+// determine if user is on KissAsian and on the drama's main episode page
+
+else if (hostName == "kissasian.com"){
+	if (window.location.href.indexOf("kissasian.com/") == -1) {
+		alert("You are not currently on KissAsian.");
+		//fake function to cause script to terminate
+		AbortJavaScript();
+	} else if (window.location.href.indexOf("kissasian.com/Drama/") == -1) {
+		alert("You are not on the Drama's main episode page.");
+		//fake function to cause script to terminate
+		AbortJavaScript();
+	}
 }
 
 var episodeLinks = $('table.listing a').map(function(i,el) { return $(el).attr('href'); });
@@ -20,7 +49,17 @@ if (episodeLinks === 0 || episodeLinks === null) {
 }
 
 $.ajaxSetup({async:false});
-$.getScript("http://kissanime.com/Scripts/asp.js");
+switch (hostName){
+	case "kissanime.com":
+		$.getScript("http://kissanime.com/Scripts/asp.js");
+		break;
+	case "kisscartoon.me":
+		$.getScript("http://kisscartoon.me/Scripts/asp.js");
+		break;
+	case "kissasian.com":
+		$.getScript("http://kissasian.com/Scripts/asp.js");
+		break;	
+}
 
 var startEpisode; 
 do {
