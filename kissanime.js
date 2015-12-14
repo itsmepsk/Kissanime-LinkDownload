@@ -4,7 +4,7 @@ var fullURL = window.location.href;
 
 // determine if user is on KissAnime and on the anime's main episode page
 if (hostName.search(/kissanime\.\w+/i) != -1){	
-	if (fullURL.indexOf(/kissanime\.\w+\/Anime\//i) == -1) {
+	if (fullURL.search(/kissanime\.\w+\/Anime\//i) == -1) {
 		alert("You are not on the Anime's main episode page.");
 		//fake function to cause script to terminate
 		AbortJavaScript();
@@ -13,7 +13,7 @@ if (hostName.search(/kissanime\.\w+/i) != -1){
 
 // determine if user is on KissCartoon and on the cartoon's main episode page
 else if (hostName.search(/kisscartoon\.\w+/i) != -1){
-	if (fullURL.indexOf(/kisscartoon\.\w+\/Cartoon\//i) == -1) {
+	if (fullURL.search(/kisscartoon\.\w+\/Cartoon\//i) == -1) {
 		alert("You are not on the Cartoon's main episode page.");
 		//fake function to cause script to terminate
 		AbortJavaScript();
@@ -22,7 +22,7 @@ else if (hostName.search(/kisscartoon\.\w+/i) != -1){
 
 // determine if user is on KissAsian and on the drama's main episode page
 else if (hostName.search(/kissasian\.\w+/i) != -1){
-	if (fullURL.indexOf(/kissasian\.\w+\/Drama\//i) == -1) {
+	if (fullURL.search(/kissasian\.\w+\/Drama\//i) == -1) {
 		alert("You are not on the Drama's main episode page.");
 		//fake function to cause script to terminate
 		AbortJavaScript();
