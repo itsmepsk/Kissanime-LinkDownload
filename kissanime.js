@@ -44,7 +44,7 @@ if (episodeLinks === 0 || episodeLinks === null) {
 }
 
 $.ajaxSetup({async:false});
-$.getScript(hostName + "/Scripts/asp.js");
+$.getScript(URL + "/Scripts/asp.js");
 
 var startEpisode; 
 do {
