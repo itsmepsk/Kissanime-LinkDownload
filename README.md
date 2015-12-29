@@ -1,49 +1,33 @@
-How to use the script 
+KissAnime - Download Link Collector
 ======================
 
-$.getScript("https://rawgit.com/Vergo777/Kissanime-LinkDownload/master/kissanime.js")
-
-Description and usage instructions
+DESCRIPTION
 ======================
 
-If you're a free user on Kissanime and want to download multiple episodes at once, you'd usually have to visit each episode page individually one by one and get the download link again and again 
+If you're a free user on Kissanime and want to download multiple episodes at once, you would need to open each episode page individually to click the download links. This bookmarklet will facilitate that process by listing the download links together on the same page. From there, you can save them manually or use a download manager. I use DownThemAll!.
 
-This app avoids that by basically allowing you to simply go to the main anime page, run the script and automatically get direct download links for all the episodes 
+Note: An alternative use is to watch the episodes from the new page without ads or any extra content. Just be sure open them in a new tab.
 
-The detailed steps to use this script are as follows - 
+USAGE
+======================
 
-##1. Login to Kissanime using your account (make one if needed) 
+```
+javascript:(function(){var%20script=window.document.createElement("script");script.src="https://rawgit.com/Amraki/KissAnime-DLC/master/kissanime.js";document.body.appendChild(script);window.document.getElementsByTagName("head")[0].appendChild(script);})();
+```
+1. Create a bookmarklet. Name it something you'll remember (KissAnime-DLC) and paste the above javascript in the 'Location' field.
 
-##2. Go to the main page of the anime you want to download (e.g. Wake up Girls) 
+2. Make sure you're logged into KissAnime. Make a free account if necessary.
 
-![Screenshot](https://a.pomf.se/udpztv.png)
+3. Go to the main episode page of the anime you want to download.
 
-##3. Press F12 and click on the console tab 
+4. Click the bookmarklet.
 
-![Screenshot](https://a.pomf.se/sndhdw.png)
+5. In the first prompt, enter the first episode number you want to download.
 
-##4. Paste the following into the console window and press enter 
+6. In the second prompt, enter the last episode number you want to download.
 
-$.getScript("https://rawgit.com/Vergo777/Kissanime-LinkDownload/master/kissanime.js")
+7. Enter the preferred video quality in the last prompt (e.g. 1280x720). If not available, it will use the highest quality instead.
 
-![Screenshot](https://a.pomf.se/svfhlk.png)
+8. Wait. A new window/tab will open when the selected episode's download links have been collected.
 
-##5. Enter the episode number from which you'd like to start generating download links (e.g. ep 3)  
-
-![Screenshot](https://a.pomf.se/rsuhqo.png)
-
-##6. Enter the final episode number till which you'd like to generate download links (e.g. ep 9)  
-
-![Screenshot](https://a.pomf.se/iefobt.png)
-
-##7. Enter the video quality you'd like to get. This can be found on any episode page. (e.g. 1280x720.mp4)  
-
-![Screenshot](https://a.pomf.se/hqvfvo.png)
-
-![Screenshot](https://a.pomf.se/bdjswc.png)
-
-##8. Wait till all links are generated, and then copy them from the console window! 
-
-![Screenshot](https://a.pomf.se/kpejyt.png)
-
-Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading
+9. Either right click each link on the page and choose 'Save Link As' or use an addon to download them all with one click. 
